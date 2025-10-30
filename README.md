@@ -33,7 +33,7 @@ It captures live packets, analyzes them for anomalies, and visualizes traffic pa
 
 1. **Clone this repository**
    ```bash
-  git clone https://github.com/dashmeet1222/Network-Security-Project-Minor-.git
+        git clone https://github.com/dashmeet1222/Network-Security-Project-Minor-.git
    cd NetPulse
 Install dependencies
 
