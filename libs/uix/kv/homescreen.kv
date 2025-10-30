@@ -1,0 +1,148 @@
+<HomeScreen>
+    name: 'homescreen'
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: 150
+            padding: (50, 0, 50, 0)
+
+            Image:
+                source: 'assets/images/NetPulse-black-text.png' if app.theme_cls.theme_style == 'Light' else 'assets/images/NetPulse-white-text.png'
+                size_hint_x: None
+                width: 150
+
+            Widget: # Spacer
+
+            MDIconButton:
+                icon: 'brightness-6'
+                on_release: app.switch_theme()
+
+            MDIconButton:
+                icon: 'cog-outline'
+                on_release: root.open_settings()
+
+        MDScrollView:
+            StackLayout:
+                size_hint_y: None
+                height: self.minimum_height
+                padding: '50dp'
+                spacing: '50dp'
+
+                IfaceCard:
+                    MDBoxLayout:
+                        padding: 20
+                        orientation: 'vertical'
+                        spacing: 10
+                        MDIconButton:
+                            icon: 'file-document-outline'
+                            icon_size: 64
+                            pos_hint: {'center_x': .5, 'center_y': .5}
+                        MDFillRoundFlatIconButton:
+                            icon: 'upload'
+                            text: 'Upload Pcap File'
+                            pos_hint: {'center_x': .5, 'center_y': .5}
+                            on_release: root.open_file_manager()
+                        MDLabel:
+                            id: selected_pcap_file
+                            text: '-- Not Selected --'
+                            font_style: 'Subtitle1'
+                            halign: 'center'
+                        MDLabel:
+                            text: 'Recents: '
+                            font_style: 'Subtitle1'
+                        MDScrollView:
+                            MDList:
+                                id: pcap_list
+                        MDFillRoundFlatButton: 
+                            text: 'Open'
+                            pos_hint: {'center_x': .5, 'center_y': .5}
+                            on_release: root.open_pcap(selected_pcap_file.text)
+
+                IfaceCard:
+                    MDBoxLayout:
+                        padding: 20
+                        orientation: 'vertical'
+                        spacing: 10
+                        MDIconButton:
+                            icon: 'wifi'
+                            icon_size: 64
+                            pos_hint: {'center_x': .5, 'center_y': .5}
+                        MDDropDownItem:
+                            id: wireless_drop_list
+                            pos_hint: {'center_x': .5, 'center_y': .5}
+                            on_release: root.wireless_menu.open()
+                        MDScrollView:
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                size_hint_x: None
+                                width: 350
+                                id: wireless_card_box
+                        MDFillRoundFlatButton: 
+                            text: 'Start'
+                            pos_hint: {'center_x': .5, 'center_y': .5}
+                            on_release: root.start_capture(wireless_drop_list.current_item)
+     
+                IfaceCard:
+                    MDBoxLayout:
+                        padding: 20
+                        orientation: 'vertical'
+                        spacing: 10
+                        MDIconButton:
+                            icon: 'ethernet'
+                            icon_size: 64
+                            pos_hint: {'center_x': .5, 'center_y': .5}
+                        MDDropDownItem:
+                            id: ethernet_drop_list
+                            pos_hint: {'center_x': .5, 'center_y': .5}
+                            on_release: root.ethernet_menu.open()
+                        MDScrollView:
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                size_hint_x: None
+                                width: 350
+                                id: ethernet_card_box
+                        MDFillRoundFlatButton: 
+                            text: 'Start'
+                            pos_hint: {'center_x': .5, 'center_y': .5}
+                            on_release: root.start_capture(ethernet_drop_list.current_item)
+
+                IfaceCard:
+                    MDBoxLayout:
+                        padding: 20
+                        orientation: 'vertical'
+                        spacing: 10
+                        MDIconButton:
+                            icon: 'video-input-component'
+                            icon_size: 64
+                            pos_hint: {'center_x': .5, 'center_y': .5}
+                        MDDropDownItem:
+                            id: others_drop_list
+                            pos_hint: {'center_x': .5, 'center_y': .5}
+                            on_release: root.others_menu.open()
+                        MDScrollView:
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                size_hint_x: None
+                                width: 350
+                                id: others_card_box
+                        MDFillRoundFlatButton: 
+                            text: 'Start'
+                            pos_hint: {'center_x': .5, 'center_y': .5}
+                            on_release: root.start_capture(others_drop_list.current_item)
+
+
+<IfaceCard@MDCard>:
+    size_hint: None, None
+    size: 250, 400
+    focus_behavior: True
+    focus_color: app.theme_cls.bg_dark
+    md_bg_color: app.theme_cls.bg_light
+    style: 'outlined'
+    line_color: app.theme_cls.primary_color
+    line_width: 1
+    radius: [15]
+
+

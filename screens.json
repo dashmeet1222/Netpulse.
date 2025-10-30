@@ -1,0 +1,15 @@
+{
+    "from libs.uix.baseclass.homescreen import HomeScreen":{
+        "screen_name": "homescreen",
+        "factory": "Factory.HomeScreen()"
+    },
+    "from libs.uix.baseclass.tabsscreen import TabsScreen":{
+        "screen_name": "tabsscreen",
+        "factory": "Factory.TabsScreen()"
+    },
+    "from libs.uix.baseclass.settingsscreen import SettingsScreen":{
+        "screen_name": "settingsscreen",
+        "factory": "Factory.SettingsScreen()"
+    }
+    
+}
