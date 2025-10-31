@@ -1,13 +1,6 @@
 # NetPulse
 NetPulse is an open-source network defense and analysis tool designed to empower network administrators and security professionals in safeguarding their networks against potential threats. This comprehensive tool offers a range of defensive capabilities, enabling threat detection, analysis, and protection of network traffic.
 
-# 🕵️‍♂️ NetPulse – Real-Time Network Traffic Analyzer & Intrusion Detection System
-
-NetPulse is a **real-time network traffic monitoring and intrusion detection system (IDS)** designed to provide detailed insights into network activity.  
-It captures live packets, analyzes them for anomalies, and visualizes traffic patterns through an intuitive, interactive interface.
-
----
-
 ## 💡 Key Features
 
 - 📡 **Real-Time Packet Capture** – Monitor live network traffic or load pre-captured `.pcap` files.  
