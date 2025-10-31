@@ -26,7 +26,7 @@ NetPulse is an open-source network defense and analysis tool designed to empower
 
 1. **Clone this repository**
    ```bash
-        git clone https://github.com/dashmeet1222/Network-Security-Project-Minor-.git
+   git clone https://github.com/dashmeet1222/Netpulse..git
    cd NetPulse
 Install dependencies
 
